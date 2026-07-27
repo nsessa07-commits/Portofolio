@@ -1,0 +1,44 @@
+@media(min-width:300px) and (max-width: 700px ) {
+
+    .container > nav{
+
+        display: none;
+        align-items: center;
+        justify-content: flex-end;
+        
+
+    }
+   .Menu{
+
+    margin-left: 50%;
+    display: flex;
+
+   }
+   main> section{
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    gap: 4px;
+    width: 100%;
+    height: auto;
+    padding: 0px;
+
+} 
+main section> .Recepcao{
+
+    width: 100%;
+    padding: 20px;
+    
+}
+main section > .imagem{
+
+        width: 100%;
+        padding:30px;
+
+}
+
+
+
+
+}
