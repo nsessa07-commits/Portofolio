@@ -23,6 +23,8 @@ drm.forEach((element) => observador.observe(element));
 
 
 
+
+
 let h1 = document.querySelector('.Ponteiro');
 let welcome = 'Programador Full-Stack';
 
