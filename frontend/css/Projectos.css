@@ -1,0 +1,96 @@
+/* cartões dos projectos novos (gerados por projectos.js) */
+
+.proj-lista{
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    margin-top: 48px;
+    padding-bottom: 40px;
+}
+
+.proj{
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.proj > img{
+
+    width: 50%;
+    border-radius: 20px;
+}
+
+.proj-info{
+
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.proj-info h3{
+
+    font-size: 1.3rem;
+}
+
+.proj-info p{
+
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.proj-tech{
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.proj-tech span{
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 7px;
+    background-color: rgb(89, 90, 91);
+    font-size: 0.8rem;
+}
+
+.proj-tech img{
+
+    width: 22px;
+    height: 22px;
+}
+
+.proj-links{
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 6px;
+}
+
+.proj-links img{
+
+    width: 27px;
+    height: 27px;
+}
+
+.proj-demo{
+
+    text-decoration: underline;
+}
+
+@media (max-width: 768px){
+
+    .proj > img,
+    .proj-info{ width: 90%; }
+}

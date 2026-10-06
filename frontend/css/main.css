@@ -62,8 +62,7 @@ main> section{
     padding: 20px;
 }
 .Hablilidades> img{
-
-    border: 2px solid white;
+border: 2px solid white;
     width: 47%;
     height: 44%;
     border-radius: 14px;
@@ -71,6 +70,10 @@ main> section{
     align-items: center;
     justify-content: center;
 
+    object-fit: contain;      /* evita esticar a imagem, mantém proporção */
+    image-rendering: -webkit-optimize-contrast; /* melhora nitidez em navegadores WebKit */
+    padding: 10px;             /* dá um respiro para o ícone não colar na borda */
+    box-sizing: border-box;
 
 }
 .Hablilidades> img:hover{
