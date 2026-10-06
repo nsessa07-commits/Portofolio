@@ -1,0 +1,166 @@
+/* secção Habilidades: filtros + cartões interativos */
+
+.skills{
+
+    width: min(900px, 90%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+/* ---------- Filtros ---------- */
+
+.skills-filtros{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.filtro{
+
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background-color: transparent;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.filtro:hover{
+
+    border-color: #fff;
+    transform: translateY(-2px);
+}
+
+.filtro.ativo{
+
+    background-color: #fff;
+    border-color: #fff;
+    color: #000;
+}
+
+.filtro:focus-visible,
+.skill:focus-visible{
+
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+.skills-contador{
+
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ---------- Cartões ---------- */
+
+.skills-grid{
+
+    list-style: none;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+.skill{
+
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 22px 12px 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background-color: rgb(18, 18, 18);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill.oculto{
+
+    display: none !important;
+}
+
+.skill img{
+
+    position: relative;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.skill span{
+
+    position: relative;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.skill small{
+
+    position: relative;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.skill:hover{
+
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.skill:hover img{
+
+    transform: scale(1.12);
+}
+
+/* brilho que segue o rato (--x e --y vêm do habilidades.js) */
+.skill::before{
+
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(160px circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.14), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.skill:hover::before{
+
+    opacity: 1;
+}
+
+/* entrada ao mudar de filtro ("backwards" para não bloquear o hover) */
+.skill.entrar{
+
+    animation: skill-entrar 0.45s ease backwards;
+}
+
+@keyframes skill-entrar{
+
+    from{ opacity: 0; transform: translateY(14px) scale(0.96); }
+    to{ opacity: 1; transform: none; }
+}
+
+@media (max-width: 480px){
+
+    .skills-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce){
+
+    .skill,
+    .skill img,
+    .filtro{ transition: none; }
+
+    .skill.entrar{ animation: none; }
+}

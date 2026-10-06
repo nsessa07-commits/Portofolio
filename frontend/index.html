@@ -9,8 +9,9 @@
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="./css/animações.css">
         <script defer src="./Anime.js"></script>
-        <script defer src="./Anime.js"></script>
         <script defer src="./projectos.js"></script>
+        <link rel="stylesheet" href="./css/habilidades.css">
+        <script defer src="./habilidades.js"></script>
         <link rel="stylesheet" href="./css/projectos.css">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -126,39 +127,93 @@
                     <h2>Minhas Habilidades</h2>
                 </div>
 
-                <div class="Hablilidades confie">
-                    <img class="Ver"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
-                        alt="C#" title="C#">
-                    <img class="Ver"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                        alt="JavaScript" title="JavaScript">
-                    <img class="Ver"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                        alt="Node.js" title="Node.js">
-                    <img class="Ver" src="./assets/email_96px.png" alt="Email"
-                        title="Email">
-                    <img class="Ver"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                        alt="HTML5" title="HTML5">
-                    <img class="Ver"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                        alt="CSS3" title="CSS3">
-                    <img class="Ver"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
-                        alt="SQL Server" title="SQL Server">
-                    <img class="Ver"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg"
-                        alt="SQLite" title="SQLite">
-                    <img class="Ver"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                        alt="MySQL" title="MySQL">
-                    <img class="Ver"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-                        alt="PostgreSQL" title="PostgreSQL">
-                    <img class="Ver"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                        alt="React" title="React">
+                <div class="skills">
+
+                    <div class="skills-filtros" role="group"
+                        aria-label="Filtrar habilidades">
+                        <button type="button" class="filtro ativo"
+                            data-filtro="todos"
+                            aria-pressed="true">Todos</button>
+                        <button type="button" class="filtro"
+                            data-filtro="frontend"
+                            aria-pressed="false">Front-end</button>
+                        <button type="button" class="filtro"
+                            data-filtro="backend"
+                            aria-pressed="false">Back-end</button>
+                        <button type="button" class="filtro" data-filtro="bd"
+                            aria-pressed="false">Bases de dados</button>
+                    </div>
+
+                    <p class="skills-contador" id="skills-contador"
+                        aria-live="polite">11 tecnologias</p>
+
+                    <ul class="skills-grid Ver">
+                        <li class="skill" data-cat="frontend">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                alt>
+                            <span>HTML5</span><small>Front-end</small>
+                        </li>
+                        <li class="skill" data-cat="frontend">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                alt>
+                            <span>CSS3</span><small>Front-end</small>
+                        </li>
+                        <li class="skill" data-cat="frontend">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                alt>
+                            <span>JavaScript</span><small>Front-end</small>
+                        </li>
+                        <li class="skill" data-cat="frontend">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                                alt>
+                            <span>React</span><small>Front-end</small>
+                        </li>
+                        <li class="skill" data-cat="backend">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                                alt>
+                            <span>Node.js</span><small>Back-end</small>
+                        </li>
+                        <li class="skill" data-cat="backend">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+                                alt>
+                            <span>C#</span><small>Back-end</small>
+                        </li>
+                        <li class="skill" data-cat="backend">
+                            <img src="./assets/email_96px.png" alt>
+                            <span>C</span><small>Back-end</small>
+                        </li>
+                        <li class="skill" data-cat="bd">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                                alt>
+                            <span>PostgreSQL</span><small>Base de dados</small>
+                        </li>
+                        <li class="skill" data-cat="bd">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                alt>
+                            <span>MySQL</span><small>Base de dados</small>
+                        </li>
+                        <li class="skill" data-cat="bd">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+                                alt>
+                            <span>SQL Server</span><small>Base de dados</small>
+                        </li>
+                        <li class="skill" data-cat="bd">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg"
+                                alt>
+                            <span>SQLite</span><small>Base de dados</small>
+                        </li>
+                    </ul>
+
                 </div>
 
             </section>
@@ -365,8 +420,6 @@
                             style="width:10px; border-radius:50% ; background-color: rgb(215, 20, 20); height:10px;"></div>
                     </div>
                 </div>
-
-
 
             </section>
 
